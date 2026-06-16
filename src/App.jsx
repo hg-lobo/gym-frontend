@@ -29,8 +29,8 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         
         {/* Rutas admin con Layout */}
-        <Route path="/dashboard" element={<LayoutAdmin />}>
-          <Route index element={<DashboardAdmin />} />
+        <Route path="/" element={<LayoutAdmin />}>
+          <Route path="dashboard" element={<DashboardAdmin />} />
           <Route path="admin/usuarios" element={<Usuarios />} />
           <Route path="admin/maquinas" element={<Maquinas />} />
           <Route path="admin/accesos" element={<Accesos />} />
