@@ -1,0 +1,121 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #141414;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #CCFF00;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+  }
+
+  ::selection {
+    background: #CCFF00;
+    color: #0A0A0A;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative bg-[#CCFF00] text-[#0A0A0A] font-bold py-3 px-6 rounded-xl
+           transition-all duration-300 ease-out
+           hover:scale-105 hover:shadow-[0_0_30px_rgba(204,255,0,0.3)]
+           active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-[#CCFF00] focus:ring-offset-2 focus:ring-offset-[#0A0A0A];
+  }
+
+  .btn-secondary {
+    @apply bg-[#1A1A1A] text-[#FFFFFF] font-medium py-3 px-6 rounded-xl
+           border border-[#6B7280]/20
+           transition-all duration-300
+           hover:bg-[#242424] hover:border-[#CCFF00]/30
+           focus:outline-none focus:ring-2 focus:ring-[#CCFF00]/50;
+  }
+
+  .card {
+    @apply bg-[#1A1A1A] rounded-2xl p-6
+           border border-[#6B7280]/10
+           transition-all duration-300
+           hover:border-[#CCFF00]/20 hover:shadow-[0_0_40px_rgba(204,255,0,0.05)];
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-[#1A1A1A] to-[#141414]
+           rounded-2xl p-6
+           border border-[#6B7280]/10
+           transition-all duration-300
+           hover:border-[#CCFF00]/20;
+  }
+
+  .input-gym {
+    @apply w-full bg-[#141414] border border-[#6B7280]/20 rounded-xl
+           px-4 py-3 text-[#FFFFFF] placeholder-[#6B7280]
+           transition-all duration-300
+           focus:outline-none focus:border-[#CCFF00] focus:ring-2 focus:ring-[#CCFF00]/20;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-neon {
+    @apply badge bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/20;
+  }
+
+  .badge-success {
+    @apply badge bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20;
+  }
+
+  .badge-danger {
+    @apply badge bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20;
+  }
+
+  .stat-card {
+    @apply card text-center
+           hover:border-[#CCFF00]/30 hover:shadow-[0_0_50px_rgba(204,255,0,0.05)];
+  }
+
+  .stat-number {
+    @apply text-4xl font-bold bg-gradient-to-r from-[#CCFF00] to-[#CCFF00]/70
+           bg-clip-text text-transparent;
+  }
+
+  .stat-label {
+    @apply text-[#6B7280] text-sm uppercase tracking-wider mt-1;
+  }
+
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-[#CCFF00]/20 to-transparent my-6;
+  }
+}
