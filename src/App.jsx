@@ -3,10 +3,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Perfil from './pages/Perfil';
+import DashboardRouter from './pages/DashboardRouter';  // ← IMPORTAR
 
 // Layout y páginas admin
 import LayoutAdmin from './components/LayoutAdmin';
-import DashboardAdmin from './pages/admin/DashboardAdmin';
 import Usuarios from './pages/admin/Usuarios';
 import Maquinas from './pages/admin/Maquinas';
 import Accesos from './pages/admin/Accesos';
@@ -28,18 +28,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/perfil" element={<Perfil />} />
         
-        {/* Rutas admin con Layout */}
-        <Route path="/" element={<LayoutAdmin />}>
-          <Route path="dashboard" element={<DashboardAdmin />} />
-          <Route path="admin/usuarios" element={<Usuarios />} />
-          <Route path="admin/maquinas" element={<Maquinas />} />
-          <Route path="admin/accesos" element={<Accesos />} />
-          <Route path="admin/entrenamientos" element={<Entrenamientos />} />
-          <Route path="admin/entrenados" element={<Entrenados />} />
-          <Route path="admin/roles" element={<Roles />} />
-          <Route path="admin/evolucion" element={<Evolucion />} />
-          <Route path="admin/qr" element={<QR />} />
-          <Route path="admin/configuracion" element={<Configuracion />} />
+        {/* Dashboard con Layout */}
+        <Route path="/dashboard" element={<LayoutAdmin />}>
+          <Route index element={<DashboardRouter />} />  {/* ← NUEVO */}
+          <Route path="usuarios" element={<Usuarios />} />
+          <Route path="maquinas" element={<Maquinas />} />
+          <Route path="accesos" element={<Accesos />} />
+          <Route path="entrenamientos" element={<Entrenamientos />} />
+          <Route path="entrenados" element={<Entrenados />} />
+          <Route path="roles" element={<Roles />} />
+          <Route path="evolucion" element={<Evolucion />} />
+          <Route path="qr" element={<QR />} />
+          <Route path="configuracion" element={<Configuracion />} />
         </Route>
       </Routes>
     </BrowserRouter>
