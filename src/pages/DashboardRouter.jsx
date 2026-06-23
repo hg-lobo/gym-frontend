@@ -9,6 +9,7 @@ import DashboardEntrenador from './entrenador/DashboardEntrenador';
 
 const DashboardRouter = () => {
   const user = authService.getCurrentUser();
+  console.log('Usuario en DashboardRouter:', user); // 
 
   if (!user) {
     return <Navigate to="/login" replace />;
