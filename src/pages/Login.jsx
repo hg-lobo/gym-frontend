@@ -18,8 +18,8 @@ const Login = () => {
     setLoading(true);
 
     try {
-      await authService.login(correo, clave);
-      console.log('Usuario logueado:', response.usuario); //
+      const response = await authService.login(correo, clave);  // ← GUARDAR LA RESPUESTA
+      console.log('Usuario logueado:', response.usuario);
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.error || 'Error al iniciar sesion');
