@@ -4,8 +4,8 @@ import { Navigate } from 'react-router-dom';
 import authService from '../services/authService';
 import DashboardAdmin from './admin/DashboardAdmin';
 import DashboardRecep from './recepcionista/DashboardRecep';
-import DashboardEntrenador from './entrenador/DashboardEntrenador';
 import DashboardCliente from './cliente/DashboardCliente';
+import DashboardEntrenador from './entrenador/DashboardEntrenador';
 
 const DashboardRouter = () => {
   const user = authService.getCurrentUser();
@@ -24,7 +24,7 @@ const DashboardRouter = () => {
     case 4:
       return <DashboardEntrenador />;
     default:
-      return <DashboardCliente />;
+      return <Navigate to="/login" replace />;
   }
 };
 
